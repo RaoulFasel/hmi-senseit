@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     ViewPager viewPager;
     int MY_PERMISSION_REQUEST_BODY_SENSORS;
     public GoogleApiClient mApiClient;
-    private URI ip = new URI("ws://130.89.136.203:8003");
+    private URI ip = new URI("ws://130.89.136.203:8004");
 
     public MainActivity() throws URISyntaxException {
     }
