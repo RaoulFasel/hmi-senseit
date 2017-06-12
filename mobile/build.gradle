@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.2'
+
+    signingConfigs {
+        config {
+            keyAlias 'raoul'
+            keyPassword 'raoul'
+            storeFile file('raoul.keystore')
+            storePassword 'raoul'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.example.bobloos.coach"
+        minSdkVersion 23
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+    supportLibVersion = '23.0.1'  // variable that can be referenced to keep support libs consistent
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    wearApp project(':wear')
+    testCompile 'junit:junit:4.12'
+    compile project(':shared')
+    compile('com.mikepenz:materialdrawer:5.2.1@aar') {
+        transitive = true
+    }
+    compile 'org.java-websocket:Java-WebSocket:1.3.4'
+    compile 'com.loopj.android:android-async-http:1.4.5'
+    //compile 'com.android.support:support-core-utils:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.squareup:otto:1.3.4'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.scottyab:aescrypt:0.0.1'
+    //apply plugin: 'java'
+    //compile "com.android.support:recyclerview-v7:${supportLibVersion}" compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:support-annotations:23.0.1'
+}

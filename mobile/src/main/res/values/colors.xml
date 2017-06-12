@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#00AFCC</color>
+    <color name="colorAccent">#FFBA47</color>
+
+    <color name="material_drawer_primary">@color/colorPrimary</color>
+    <color name="material_drawer_primary_dark">@color/colorPrimaryDark</color>
+    <color name="material_drawer_primary_light">@color/colorPrimaryDark</color>
+    <color name="material_drawer_accent">@color/colorAccent</color>
+
+    <color name="black_overlay">#66000000</color>
+
+</resources>

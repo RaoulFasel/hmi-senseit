@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SenseIT</string>
+    <string name="my_analog_name">My Analog</string>
+    <string name="title_activity_face1_activity">Face1_activity</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
+    <string name="title_activity_face2_activity">Face2_activity</string>
+    <string name="title_activity_face3_activity">Face3_activity</string>
+    <string name="title_activity_face4_activity">Face4_activity</string>
+</resources>

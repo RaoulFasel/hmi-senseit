@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.bobloos.coach.SettingsActivity">
+
+    <include layout="@layout/fragment_top_small"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nieuwe basismeting starten"
+            android:background="@color/colorAccent"
+            android:id="@+id/baseLineButton"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#FFFFFF"
+            android:translationZ="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/saveSettingsButton"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Gebruikersinstellingen"
+            android:id="@+id/textView"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="22dp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Gemiddelde hartslag:"
+            android:id="@+id/useraverageHR"
+            android:paddingBottom="15dp"
+            android:layout_below="@+id/user_unique_id"
+            android:layout_alignStart="@+id/textView"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Standaard afwijking"
+            android:id="@+id/userstdf"
+            android:paddingBottom="15dp"
+            android:layout_below="@+id/useraverageHR"
+            android:layout_alignStart="@+id/useraverageHR"
+            android:layout_marginTop="26dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Unieke gebruikers-id"
+            android:id="@+id/user_unique_id"
+            android:layout_marginTop="27dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignEnd="@+id/userstdf" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Export database"
+            android:background="@color/colorAccent"
+            android:id="@+id/exportButton"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#FFFFFF"
+            android:translationZ="10dp"
+            android:visibility="visible"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/baseLineButton"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editTextStdfResult"
+            android:layout_alignBottom="@+id/userstdf"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp" />
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editTextHRResult"
+            android:layout_alignBottom="@+id/useraverageHR"
+            android:layout_alignStart="@+id/editTextStdfResult"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opslaan"
+            android:background="@color/colorAccent"
+            android:id="@+id/saveSettingsButton"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#FFFFFF"
+            android:translationZ="10dp"
+            android:layout_below="@+id/sensibilityGroup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Gevoeligheid van het systeem:"
+            android:id="@+id/textView2"
+            android:paddingBottom="15dp"
+            android:layout_below="@+id/userstdf"
+            android:layout_alignStart="@+id/user_unique_id"
+            android:layout_marginTop="22dp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/sensibilityGroup"
+            android:layout_below="@+id/textView2"
+            android:layout_alignEnd="@+id/editTextStdfResult"
+            android:layout_alignStart="@+id/textView2">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Laag"
+                android:id="@+id/radioButtonLight"
+                android:checked="false"
+                android:paddingRight="10dp"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Normaal"
+                android:id="@+id/radioButtonNormal"
+                android:checked="true"
+                android:paddingRight="10dp"
+                android:enabled="true"
+                android:onClick="onRadioButtonClicked" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hoog"
+                android:id="@+id/radioButtonSensitive"
+                android:layout_gravity="right"
+                android:checked="false"
+                android:paddingRight="10dp"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewUniqueUserId"
+            android:layout_alignTop="@+id/user_unique_id"
+            android:layout_alignStart="@+id/editTextHRResult" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
